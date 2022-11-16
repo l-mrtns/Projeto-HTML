@@ -267,19 +267,19 @@
             <h1 class="heading"> <span>Entre</span> em contato </h1>
             <div class="row">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3746706.6345930276!2d-48.211407129178596!3d-23.500356095151194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997d56b9b03723%3A0x84701464588afb46!2sMorro%20do%20Careca!5e0!3m2!1spt-BR!2sbr!4v1668086656044!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <form action="php/cadastro.php" method="POST">
+                <form name="cadastro" action="php/cadastro.php" method="POST"> <!-- onsubmit="return validaForm()" -->
                     <h3>ENTRAR EM CONTATO</h3>
                     <div class="inputBox">
                         <span class="fas fa-user"></span>
-                        <input type="text" placeholder="nome" name="nome">
+                        <input type="text" placeholder="nome" name="nome" required>
                     </div>
                     <div class="inputBox">
                         <span class="fas fa-envelope"></span>
-                        <input type="email" placeholder="email" name="email">
+                        <input type="email" placeholder="email" name="email" required>
                     </div>
                     <div class="inputBox">
                         <span class="fas fa-phone"></span>
-                        <input type="number" placeholder="número" name="telefone">
+                        <input type="tel" placeholder="número" name="telefone" pattern="[0-9]{11}" required>
                     </div>
                     <input type="submit" value="Enviar Mensagem" class="btn">
                 </form>
