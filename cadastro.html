@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/cadastroEstilo.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="icon" href="images/logo.png">
+        <title>Cura Calvo | Cadastro</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h2>Criar um cadastro</h2>
+            </div>
+
+            <form id="form" class="form" action="php/cadastro.php" method="POST" onsubmit="return validaForm()">
+                <div class="form-control">
+                    <label for="nome"> Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Teu nome…"/>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="email"> Email</label>
+                    <input type="text" name="email" id="email" placeholder="Teu email…" required>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Insira um Email valido</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="password"> Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="Digita sua senha" required>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="password-confirmation"> Confirmação de senha</label>
+                    <input type="password" id="confirmaSenha" placeholder="Confirma sua senha" required>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+
+                <button type="submit"> <b>Enviar</b> </button>
+            </form>
+        </div>
+        <script src="https://kit.fontawesome.com/b33e977117.js"
+        crossorigin="anonymous"></script>
+        <script>
+            function validaForm () {
+                //Valida nome
+                const re = /[A-Za-z]/
+                var nome = document.getElementById("nome").value
+                
+                if (nome.match(re)) {
+                    console.log("OK.")
+                } else {
+                    alert("Apenas letras são válidas no campo nome.")
+                    return false
+                }
+
+                //Valida confirma senha
+                senha = document.getElementById("senha").value
+
+                if (senha != document.getElementById("confirmaSenha").value) {
+                    alert("Senhas não são iguais!")
+                    return false
+                }
+            }
+        </script>
+    </body>
+</html>
